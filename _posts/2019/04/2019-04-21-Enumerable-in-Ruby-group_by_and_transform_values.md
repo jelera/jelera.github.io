@@ -14,7 +14,9 @@ common when working with collections, such as arrays or hashes.
 
 ![Boromir complains about iterating array of arrays](/assets/img/onedoesnotsimply-array_of_arrays.jpg)
 
-Well, Boromir, like you, I let the influence of Isildur's Bane cloud my judgement, and succumb to despair. Well, not quite that dramatic, but it was indeed a daunting task.
+Well Boromir, just like you, I let the influence of Isildur's Bane cloud my
+judgement, and succumb to despair. Well, not quite *that* dramatic, but it was
+indeed a daunting task.
 
 In the beginning of my online research, I thought, while often occurring
 problem, that would have involved a bunch of loops and hacky code that someone
@@ -26,7 +28,7 @@ Enter Matz...
 >from Smalltalk and other languages, and the best of iterators from CLU, and
 >pretty much the best of everything from everyone.
 >
-> &mdash; <cite>Steve Yegge</cite>
+> &mdash; <cite>Steve Yegge<sup><a title='Tour de Babel by Steve Yegge' href='#1'>1</a></sup></cite>
 
 As in that quote, Ruby has a robust library in
 [**Enumerate**](https://ruby-doc.org/core-2.6.3/Enumerable.html) that allows us
@@ -35,10 +37,10 @@ or any other enumerable, all in an elegant way.
 
 ## The Problem
 
-While I don't exactly remember the exact details of the lab, the main challenge
-was to **group two collections by an arbitrary parameter**, or as we can put it,
-*"Group them by in a semantic way"*, and the answer in all those Google searches
-was to use
+While I don't exactly remember the details of the lab, the main challenge was to
+**group two collections (arrays) by an arbitrary condition**, or as we can put
+it, *"group them by in a semantic way"*, and the answer in all those Google
+searches was to use
 [`#group_by`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-group_by)
 built-in method.
 
@@ -48,11 +50,11 @@ way, you totally can, and Ruby empowers you.
 
 The documentation is very clear that, after calling `#group_by`, one must use
 a code block. Inside of that block is what the method will use for the
-*"rule"* on how to group the items and it **also** will use that line to
+**conditon** on how to group the items and it **also** will use that line to
 create a key for the output hash.
 
 I know, it is a mouthful, but after playing with it in a REPL environment, it
-all made sense, so I will show you a few examples.
+will all make sense, so I will show you a few examples.
 
 ## Demonstration
 
@@ -63,7 +65,7 @@ purpose, these examples will do just fine.
 
 We are going to group an **array** of `rock_hits`, where every item is
 **another array** which represents a *song*, and in which the first element
-is a `rock_band` and the second is a `rock hit`. Remember that, by using
+is a `rock_band` and the second is a `rock_hit`. Remember that, by using
 `#group_by`, the return object will be an **hash**.
 
 ```ruby
@@ -93,15 +95,15 @@ rock_hits = [
 ```
 
 We want to use the artist, or the first item of the nested arrays, for the
-keys. We can do that by running the following command in **irb** or **pry**:
+key. We can do that by running the following command in **irb** or **pry**:
 
 ```ruby
 rock_hits.group_by { |song| song[0].itself }
 ```
 
-You may be asking yourself, what is `#itself`? Well, it's a [kernel
-method](https://ruby-doc.org/core-2.2.0/Object.html#method-i-itself) that makes
-an object... return itself. I know, right?.
+You may be asking yourself, what is `#itself`? It's a [kernel
+method](https://ruby-doc.org/core-2.2.0/Object.html#method-i-itself) that ...
+well, makes an object return itself. Handy, right?.
 
 The returned hash looks like this:
 
@@ -178,17 +180,19 @@ We have a [Ruby way](https://www.infoq.com/articles/what-is-the-ruby-way) of
 doing this, all without using `#each`!
 
 **[`Hash#transform_values`](https://ruby-doc.org/core-2.6.1/Hash.html#method-i-transform_values)
-*to the rescue!**
+ to the rescue!**
 
 ![In a smash bros meme, Transform Values joins the battle](/assets/img/smashbros-transformvalues_joins.jpg)
 
 When we read the documentation, it says that `#transform_values` takes a
-`Hash` and it operates on its values. Pretty straight forward.
+**hash** and it operates on its values. Pretty straight forward.
 
 Let's go back to **irb**, and try:
 
 ```ruby
-rock_hits.group_by { |song| song.shift }.transform_values { |values| values.flatten }
+rock_hits.group_by { |song| song.shift }.transform_values do |values|
+  values.flatten
+end
 ```
 
 And, this is what we get in return.
@@ -222,7 +226,7 @@ And, this is what we get in return.
  }
 ```
 
-**Eureka!**, this is the hash we were looking for!!!
+**Eureka!** This is the hash we were looking for!!!
 
 #### Public Service Announcement:
 
@@ -276,14 +280,14 @@ And, we get what we wanted ...
    ....
 ```
 
-I've used `#to_sym` to convert the string to a symbol as they then to be
+I've used `#to_sym` to convert the string to a symbol as they tend to be
 better keys. I'll expand more on that in a later blog post.
 
 We can even count how many countries there are, per letter. We will use our
 old trusty `#transform_values`.
 
 ```ruby
-country_list.group_by { |country_name| country_name[0].to_sym }.transform_values{ |values| values.count }
+country_list.group_by { |country_name| country_name[0].to_sym }.transform_values { |values| values.count }
 ```
 
 And the returned hash has the actual count of countries per letter.
@@ -317,8 +321,8 @@ And the returned hash has the actual count of countries per letter.
 
 ### Example 3
 
-In this example, we are going to group the *hash* by the keys `passed` and
-`failed`. The score is goes from 0 to 100, where the student needs **at
+In this example, we are going to group the **hash** by the keys `:passed` and
+`:failed`. The score goes from 0 to 100, where the student needs **at
 least** 60 to pass.
 
 Here we have a real-world example of the usefulness of `#group_by`. It is
@@ -388,8 +392,13 @@ And, here is our finished hash:
 ## Conclusion
 
 Like peanut butter and jelly, `Enumerable#group_by` and `Hash#transform_values`
-go well together, and should be part of your repertoire as a developer. Once
-I'll start diving into advanced JavaScript development, I'll search what is the
-equivalent of these helpful methods.
+go well together, and should be part of your repertoire as a Ruby developer.
+Once I'll start diving into advanced JavaScript development, I'll search what is
+the equivalent of these helpful methods.
 
 Cheers.
+
+## Footnotes
+
+<span id="1">[1]</span> [Tour de
+Babel](https://sites.google.com/site/steveyegge2/tour-de-babel) by Steve Yegge

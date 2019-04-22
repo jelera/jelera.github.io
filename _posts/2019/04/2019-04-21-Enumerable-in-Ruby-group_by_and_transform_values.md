@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Working with collections in Ruby: group_by and transform_values"
+title: "Enumerable in Ruby: group_by and transform_values"
 date: 2019-04-21 14:14:11 -0500
 description: ""
 categories: ruby programming enumerable collections howto

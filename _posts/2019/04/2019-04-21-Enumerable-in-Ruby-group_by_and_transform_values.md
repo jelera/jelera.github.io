@@ -7,8 +7,8 @@ categories: ruby programming enumerable collections howto
 author: jose
 ---
 In the beginning of my learning experience with Ruby at Flatiron School, I came
-across an lab that was quite a challenge, **grouping items from an enumerable
-and return a hash**, where the keys and values had been arranged in ordered
+across a lab that was quite a challenge, **grouping items from an enumerable and
+return a hash**, where the keys and values had been arranged in an ordered
 semantic way. After a hefty amount of Google searches, this premise was all too
 common when working with collections, such as arrays or hashes.
 
@@ -18,9 +18,10 @@ Well Boromir, just like you, I let the influence of Isildur's Bane cloud my
 judgement, and succumb to despair. Well, not quite *that* dramatic, but it was
 indeed a daunting task.
 
-In the beginning of my online research, I thought, while often occurring
-problem, that would have involved a bunch of loops and hacky code that someone
-had probably already made it into a gem.
+In the beginning of my online research, this scenario turned out to be  very
+common and often occurring in the wild. I thought that in order to tackle this
+problem, it would have involved such a bunch of loops and weird esoteric hacks that
+someone clever had probably already made it into a gem.
 
 Enter Matz...
 
@@ -50,7 +51,7 @@ way, you totally can, and Ruby empowers you.
 
 The documentation is very clear that, after calling `#group_by`, one must use
 a code block. Inside of that block is what the method will use for the
-**conditon** on how to group the items and it **also** will use that line to
+**condition** on how to group the items and it **also** will use that line to
 create a key for the output hash.
 
 I know, it is a mouthful, but after playing with it in a REPL environment, it
@@ -58,7 +59,7 @@ will all make sense, so I will show you a few examples.
 
 ## Demonstration
 
-Again, these are not the same arrays or hashes from the lab, but from this
+Again, these are not the same arrays or hashes from the lab, but for this
 purpose, these examples will do just fine.
 
 ### Example 1
@@ -135,7 +136,7 @@ The returned hash looks like this:
    ["AC/DC", "Dirty Deeds Done Dirt Cheap"]]}
 ```
 
-One may notice that even though, we might have accomplished our objective,
+One may notice that even though we might have accomplished our objective,
 the `String` of the Artist is the key of the hash, but it's not exactly what
 was asked of us. Mmmm... well okay... Let's try again, what about this REPL
 command:
@@ -238,8 +239,8 @@ And, this is what we get in return.
 
 Say we need to group an **array** of country names, by the first letter.
 
-Having experience with `Enumerable#group_by` and `Hash#transform_values`, this
-will be a piece cake.
+Having experience with `Enumerable#group_by` and `Hash#transform_values`,
+attacking this problem will be a piece of cake.
 
 ```ruby
 country_list =
@@ -327,7 +328,7 @@ least** 60 to pass.
 
 Here we have a real-world example of the usefulness of `#group_by`. It is
 possible that one day this method will come really handy and help you from
-really hacky code.
+really *hacky* code.
 
 Here is the `grades` hash.
 
@@ -393,7 +394,7 @@ And, here is our finished hash:
 
 Like peanut butter and jelly, `Enumerable#group_by` and `Hash#transform_values`
 go well together, and should be part of your repertoire as a Ruby developer.
-Once I'll start diving into advanced JavaScript development, I'll search what is
+Once I start diving into advanced JavaScript development, I'll search what is
 the equivalent of these helpful methods.
 
 Cheers.

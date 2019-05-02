@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Enumerable in Ruby: group_by and transform_values"
+title: "How to use group_by in Ruby with real examples"
+description: "Showcasing the strengths of Ruby's Enumerable built-in method group_by with examples"
 date: 2019-04-21 14:14:11 -0500
-description: ""
+tags: [ Ruby, Data Structures, How to, Enumerable ]
+featured_image_thumbnail:
+featured_image: assets/images/posts/2018/11.jpg
+featured: true
 categories: ruby programming enumerable collections howto
-author: jose
 ---
 In the beginning of my learning experience with Ruby at Flatiron School, I came
 across a lab that was quite a challenge, **grouping items from an enumerable and
@@ -12,7 +15,7 @@ return a hash**, where the keys and values had been arranged in an ordered
 semantic way. After a hefty amount of Google searches, this premise was all too
 common when working with collections, such as arrays or hashes.
 
-![Boromir complains about iterating array of arrays](/assets/img/onedoesnotsimply-array_of_arrays.jpg)
+![Boromir complains about iterating array of arrays](/assets/images/posts/2019/04/onedoesnotsimply-array_of_arrays.jpg)
 
 Well Boromir, just like you, I let the influence of Isildur's Bane cloud my
 judgement, and succumb to despair. Well, not quite *that* dramatic, but it was
@@ -183,7 +186,7 @@ doing this, all without using `#each`!
 **[`Hash#transform_values`](https://ruby-doc.org/core-2.6.1/Hash.html#method-i-transform_values)
  to the rescue!**
 
-![In a smash bros meme, Transform Values joins the battle](/assets/img/smashbros-transformvalues_joins.jpg)
+![In a smash bros meme, Transform Values joins the battle](/assets/images/posts/2019/04/smashbros-transformvalues_joins.jpg)
 
 When we read the documentation, it says that `#transform_values` takes a
 **hash** and it operates on its values. Pretty straight forward.
@@ -230,10 +233,10 @@ And, this is what we get in return.
 **Eureka!** This is the hash we were looking for!!!
 
 #### Public Service Announcement:
-
-> Remember that `Array#shift` is destructive, meaning that it will alter the
-> original array. If you need to preserve the original array, you may need to
-> make a copy of it.
+<blockquote class="psa-blockquote">
+Remember that `Array#shift` is destructive, meaning that it will alter the original array. If you need to preserve the original array, you may need to
+make a copy of it.
+</blockquote>
 
 ### Example 2
 

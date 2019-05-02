@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<main id="main" class="site-main">
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+        </header><!-- .post-header -->
+    <!-- Posts Index -->
+    <div class="post-feed inner">
+        {% if page.url == "/" %}
+        <div class="post-feed-title">Latest Articles</div>
+        {% endif %}
+        <div class="post-feed inner-wide">
+            {% for post in site.posts %}
+            {% include postbox.html %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Pagination-->
+    {% include pagination.html %}
+    {% if site.mailchimp_url %}
+    {% include newsletter-box.html %}
+    {% endif %}
+    {% if site.mailchimp_url %}
+    {% include newsletter-box.html %}
+    {% endif %}
+</main><!-- .site-main -->

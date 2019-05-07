@@ -5,7 +5,7 @@ description: "Be an civic programmer and stick to your language of choice's conv
 date: 2019-05-05 18:38:42 -0500 
 tags: [ "Good Practice", "Ruby", "JavaScript", "Python", "Text Editor" ]
 # featured_image_thumbnail:
-featured_image: assets/images/posts/2019/04/featured/ruby_group_by_featured.jpg
+featured_image: assets/images/posts/2019/05/featured/clean_code_featured.jpg
 featured: true
 # categories: "Text Editor", "Tool Setup", "Good Practice", "Ruby", "Python", "Vim", "Atom"
 ---

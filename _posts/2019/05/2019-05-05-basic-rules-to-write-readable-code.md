@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Becoming better at programming: Basic rules to write readable code"
+title: "Basic rules to write readable code"
 description: "Be an civic programmer and stick to your language of choice's conventions using editorconfig, style guides and linters."
 date: 2019-05-05 18:38:42 -0500 
 tags: [ "Good Practice", "Ruby", "JavaScript", "Python", "Text Editor" ]

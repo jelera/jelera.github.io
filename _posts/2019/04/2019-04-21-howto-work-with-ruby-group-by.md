@@ -72,7 +72,7 @@ We are going to group an **array** of `rock_hits`, where every item is
 is a `rock_band` and the second is a `rock_hit`. Remember that, by using
 `#group_by`, the return object will be an **hash**.
 
-<pre><code class="language-ruby>
+```ruby
 rock_hits = [
     ["Queen", "Bohemian Rhapsody"],
     ["Queen", "Don't Stop Me Now"],
@@ -96,7 +96,7 @@ rock_hits = [
     ["AC/DC","Shoot to Thrill"],
     ["AC/DC","Dirty Deeds Done Dirt Cheap"]
   ]
-</code></pre>
+```
 
 We want to use the artist, or the first item of the nested arrays, for the
 key. We can do that by running the following command in **irb** or **pry**:

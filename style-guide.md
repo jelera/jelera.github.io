@@ -106,7 +106,7 @@ Code blocks, highlighted with [Prism](http://prismjs.com/index.html).
 
 body {
 	font: 100%/1.5 Questrial, sans-serif;
-	tab-size: 4;
+tab-size: 4;
 	hyphens: auto;
 }
 

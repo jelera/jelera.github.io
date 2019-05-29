@@ -5,7 +5,7 @@ description: "Why should you care on error handling when programming"
 date: 2019-05-27 17:51:20 -0500
 tags: [ "Good Practice", "JavaScript", "Error Handling"]
 # featured_image_thumbnail:
-featured_image: assets/images/posts/2019/05/featured/clean_code_featured.jpg
+featured_image: assets/images/posts/2019/05/featured/Windows_XP_BSOD.png
 featured: true
 # categories: "Text Editor", "Tool Setup", "Good Practice", "Ruby", "Python", "Vim", "Atom"
 ---

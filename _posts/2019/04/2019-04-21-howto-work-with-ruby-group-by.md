@@ -72,7 +72,7 @@ We are going to group an **array** of `rock_hits`, where every item is
 is a `rock_band` and the second is a `rock_hit`. Remember that, by using
 `#group_by`, the return object will be an **hash**.
 
-```ruby
+<pre><code class='language-ruby'>
 rock_hits = [
     ["Queen", "Bohemian Rhapsody"],
     ["Queen", "Don't Stop Me Now"],
@@ -96,14 +96,14 @@ rock_hits = [
     ["AC/DC","Shoot to Thrill"],
     ["AC/DC","Dirty Deeds Done Dirt Cheap"]
   ]
-```
+</code></pre>
 
 We want to use the artist, or the first item of the nested arrays, for the
 key. We can do that by running the following command in **irb** or **pry**:
 
-```ruby
+<pre><code class='language-ruby'>
 rock_hits.group_by { |song| song[0].itself }
-```
+</code></pre>
 
 You may be asking yourself, what is `#itself`? It's a [kernel
 method](https://ruby-doc.org/core-2.2.0/Object.html#method-i-itself) that ...
@@ -111,7 +111,7 @@ well, makes an object return itself. Handy, right?.
 
 The returned hash looks like this:
 
-```ruby
+<pre><code class='language-ruby'>
 {"Queen"=>
   [["Queen", "Bohemian Rhapsody"],
    ["Queen", "Don't Stop Me Now"],
@@ -137,16 +137,16 @@ The returned hash looks like this:
    ["AC/DC", "Back In Black"],
    ["AC/DC", "Shoot to Thrill"],
    ["AC/DC", "Dirty Deeds Done Dirt Cheap"]]}
-```
+</code></pre>
 
 One may notice that even though we might have accomplished our objective,
 the `String` of the Artist is the key of the hash, but it's not exactly what
 was asked of us. Mmmm... well okay... Let's try again, what about this REPL
 command:
 
-```ruby
+<pre><code class='language-ruby'>
 rock_hits.group_by { |song| song.shift }
-```
+</code></pre>
 
 will return ...
 

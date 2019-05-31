@@ -90,11 +90,15 @@ tool makes for a headache an a half.
 Well, Fear not as the [.editorconfig project](https://editorconfig.org/) is
 an effort to consolidate the settings for formatting, indentation
 
-Using a single text config file, your team/organization can set up everyone's tools with the agreed settings like whether to use spaces or tabs, and other idiosincracies that may cause the code produced to be irregular.
+Using a single text config file, your team/organization can set up everyone's
+tools with the agreed settings like whether to use spaces or tabs, and other
+idiosincracies that may cause the code produced to be irregular.
 
 # Install linters and formatting helpers plugins
 
-If you are not familiar with linters, they will either make your life easier or they will whine on how badly your code is formatted that it'll make you feel down, and many days they will do both.
+If you are not familiar with linters, they will either make your life easier
+or they will whine on how badly your code is formatted that it'll make you
+feel down, and many days they will do both.
 
 > JSLint will hurt your feelings. Side effects may include headache, irritability, dizziness, snarkiness, stomach pain, defensiveness, dry mouth, cleaner code, and a reduced error rate.
 >
@@ -113,14 +117,17 @@ which is an amazing book for when JavaScript was having even more terrible
 reputation; he would say that *"JavaScript is a beautiful language if you
 avoid the bad parts"*.
 
-And to avoid those bad parts, he wrote [JSLint](https://www.jslint.com/) in which the program would shout at you if you are using said "bad parts" of the language, and as he puts it...
+And to avoid those bad parts, he wrote [JSLint](https://www.jslint.com/) in
+which the program would shout at you if you are using said "bad parts" of the
+language, and as he puts it...
 
 > JSLint was designed to reject code that some would consider to be **perfectly fine**. The reason for this is that JSLint's purpose is to help produce programs that are free of error. That is difficult in any language and is especially hard in JavaScript
 
 By the way, Douglas is also the creator of JSON file format, so you don't have to be
 dealing with crazy XML response files.
 
-Python and Ruby also have linters, with the popular ones being [Flake8](http://flake8.pycqa.org/en/latest/) and
+Python and Ruby also have linters, with the popular ones being
+[Flake8](http://flake8.pycqa.org/en/latest/) and
 [Rubocop](https://docs.rubocop.org/en/latest/), respectively.
 
 ![Obi Wan Kenobi dealing with linters ](/assets/images/posts/2019/05/obi_wan_linter.jpg)
@@ -137,7 +144,8 @@ has your back.
 
 # Conclusion
 
-Be an text editor Jedi, get familiar with the style guide of the language of your choice, and make use of linters to help you (hurt your feelings).
+Be an text editor Jedi, get familiar with the style guide of the language of
+your choice, and make use of linters to help you (hurt your feelings).
 
 Now, I'm not going to go into *the text editor wars* or tell why editor X is
 better than editor Y. Let's not waste our time, for we all can conclude that

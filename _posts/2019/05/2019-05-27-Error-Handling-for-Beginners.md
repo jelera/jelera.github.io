@@ -42,16 +42,15 @@ requests data transfer with the write operation.*
 Most of the time, it is in the command line interface, where programs print
 text to the console.
 
-```bash
+<pre><code class="language-bash">
 $ whoami
-```
+</code></pre>
 
 If you are not familiar with the `whoami` command, it prints the current
 logged user.
 
-```bash
-$ rails routes
-```
+<pre><code class="language-bash">$ rails routes
+</code></pre>
 
 This one will print out to **stdout** the defined routes for a Ruby on Rails
 application.
@@ -60,17 +59,17 @@ application.
 *It streams data (often text) going into a program. The program requests
 data transfers by use of the read operation.*
 
-```bash
+<pre><code class="language-bash">
 $ cat /etc/hosts > ~/hosts
-```
+</code></pre>
 
 The `cat` program will print out **every line of text** of any file into
 **stdout**, but using `>` command, we can redirect the text stream to
 ***stdin** and save it in the file `~/hosts`.
 
-```bash
+<pre><code class="language-bash">
 $ ls -la ~ | head -5
-```
+</code></pre>
 
 Using then `|`, aka **pipe command**, we can pipe the text stream from `ls`
 into the `head` command, which will take a argument of *how many lines from
@@ -78,9 +77,9 @@ the top* are needed, and they will be printed out to **stdout**. In the
 example above, we are printing the first 5 lines from the text stream of
 `ls`.
 
-```bash
+<pre><code class="language-bash">
 $ rails routes > ~/routes
-```
+</code></pre>
 
 The `~/routes` file will contained the output of `rails routes`.
 
@@ -95,17 +94,17 @@ error messages or diagnostics.*
 If there is an error during the program runtime, very likely it will use
 Standard Error.
 
-```bash
+<pre><code class="language-bash">
 $ sass index.scss index.css 2>&1 errors.log
-```
+</code></pre>
 
 This is the command line app for [Sass](https://sass-lang.com), it will take
 a SASS file and pre-process it into a CSS file. Any errors will be redirected
 to **stderr** with `2>&1` into the `errors.log` file.
 
-```bash
+<pre><code class="language-bash">
 $ bundle install 2>&1 ~/errors
-```
+</code></pre>
 
 If you have programmed with Ruby and used Bundler, you are very likely to
 have encountered with version errors. You can redirected the **stderr**
@@ -146,14 +145,14 @@ JavaScript lets us handle **runtime errors**, sometime also known as
 The `Error` object has a special purpose. It has 3 properties, a name, a
 message and a stack, although the first two are the most used.
 
-```javascript
+<pre><code class="language-javascript">
 const customError = new Error({
   name: 'customError',
   message: 'This is a custom message'
   })
 
 throw customError
-```
+</code></pre>
 
 ### try
 
@@ -171,9 +170,9 @@ new error objects. We can also take advantage of the [built-in error
 objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 provided by JavaScript.
 
-```javascript
+<pre><code class="language-javascript">
 throw new Error('Some helpful message for your peers/future-self')
-```
+</code></pre>
 
 ### finally
 
@@ -181,7 +180,7 @@ What `finally` does is to run code regardless whether an exception was raised or
 
 ### Using them all together
 
-```javascript
+<pre><code class="language-javascript">
 try {
   // Try to run this code, if an error is thrown,
   // it will be 'catch' in the `catch` statement.
@@ -197,15 +196,13 @@ finally {
   // Regardless of the outcome on `try` or `catch`,
   // This code will run.
 }
-```
+</code></pre>
 
 ### Gotcha!
 
 > Remember that `try` and `catch` will only work for runtime errors and valid JavaScript Syntax.
 >
-> And also,
->
-> `try` and `catch` won't catch an error with "scheduled" code (`setTimeout`).
+> And also, `try` and `catch` won't catch an error with "scheduled" code (`setTimeout`).
 
 ## Again, why?
 

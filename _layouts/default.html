@@ -22,7 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|PT+Sans:400,700" rel="stylesheet">
 
     <!-- CSS Styles -->
+    <link href="{{ site.baseurl }}/assets/css/rouge.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+
 </head>
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
@@ -52,6 +54,8 @@
     <!-- Javascript Assets -->
     <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-bash.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
 
 </body>
